@@ -1,0 +1,6 @@
+<view wx:for="{{warnList}}" class="weui-cells weui-cells_form weui-cells-border mt20" data-id="{{item.patrolWarnID}}" bindtap="bindGoWarnList">
+  <view class="weui-cell weui-cell-null weui-cell_select">
+    <view class="weui-cell__hd"><view class="weui-label">{{item.title}}</view></view>
+    <view class="weui-cell__bd"></view>
+  </view>
+</view>

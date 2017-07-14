@@ -1,0 +1,22 @@
+@import "../../assembly/weui-cell.wxss";
+@import "../../assembly/weui-button.wxss";
+
+.control {
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  height: 200rpx;
+  background-color: #ffffff;
+}
+
+.map_box {
+  height:950rpx;
+  width: 100%;
+}
+.map_box .map {
+  margin-top: 1rpx;
+  height:947rpx;
+  width: 100%;
+  margin-bottom: 1rpx;
+}

@@ -1,0 +1,161 @@
+<!--<view class="part1">
+  <view class="item">
+    <view class="item_label">
+      项目
+    </view>
+    <view class="item_desc">
+      <picker bindchange="bindRangeChange" value="{{contentIndex}}" range="{{placeContentList}}" range-key="contentName">
+        <view class="picker">
+          {{placeContentList[contentIndex].contentName}}
+        </view>
+      </picker>
+    </view>
+    <view class="item_arrow">
+      <image src="/resources/btn_normal.png@2x.png"></image>
+    </view>
+  </view>
+</view>-->
+
+<view class="part2">
+  <view class="desc_label">
+    <textarea value="描述" disabled="true"></textarea>
+  </view>
+
+  <view class="desc_edit">
+    <textarea bindinput="bindInput" placeholder="请输入描述"></textarea>
+  </view>
+</view>
+
+
+<view class="warner warner2">
+  <view class="warner_label">
+    语音
+  </view>
+  <view class="warner_box">
+    <view class="warner_vovic" bindtouchstart="bindAudio" bindtouchend="bindEndAudio">
+      按住说话
+    </view>
+    <view class="warner_play">
+      <image src="/resources/btn_yuying.52.png" bindtap="bindPlayAudio"></image>
+    </view>
+  </view>
+</view>
+
+<view class="warner3">
+  <view class="warner3_thumb_list" wx:for="{{thumbs}}" data-url="{{item}}" bindtap="bindShowThumb">
+    <image src="{{item}}" style="width: 230rpx; height: 230rpx;"></image>
+  </view>
+
+  <view class="warner3_thumb_add" bindtap="bindUploadFile">
+    <image src="/resources/bth_tianjia.png@2x.png"></image>
+    <view >添加照片</view>
+  </view>
+</view>
+
+<view class="warner4 mt20 mb">
+  <view class="checkuser_title">
+    提交给谁<text>（点击头像删除）</text>
+  </view>
+
+  <view class="checkuser_thumb" bindtap="bindGoCheckUser">
+    <view wx:for="{{checkUser}}" class="checkuser_userbox">
+      <image src="{{headImgUrl.length > 0 ? headImgUrl : '/resources/default_header.png'}}"></image>
+      <view>{{item.userName}}</view>
+    </view>
+    <view class="checkuser_userbox">
+      <image src="/resources/btn_default.png@2x.png"></image>
+      <view>添加人员</view>
+    </view>
+  </view>
+</view>
+
+
+<view bindtap="submitPatrol" class="active">
+  <view class="active_item_current">上报</view>
+</view>
+
+
+<!--
+<view class="weui-cells weui-cells_form weui-cells-border mt20">
+  <view class="weui-cell weui-cell-null weui-cell_select">
+    <view class="weui-cell__hd"><view class="weui-label">异常项目{{' '}}</view></view>
+    <view class="weui-cell__bd">
+      <picker bindchange="bindRangeChange" value="{{contentIndex}}" range="{{placeContentList}}" range-key="contentName">
+        <view class="picker">
+          {{placeContentList[contentIndex].contentName}}
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<view class="weui-cells weui-cells_form weui-cells-border mt20">
+  <view class="weui-cell weui-cell-null">
+    <view class="weui-cell__bd">
+      <view class="weui-uploader">
+        <view class="weui-uploader__hd">
+          <view class="weui-uploader__title">图片上传</view>
+          <view class="weui-uploader__info">{{thumbs.length}}/3</view>
+        </view>
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__file" wx:for="{{thumbs}}" data-url="{{item}}" bindtap="bindShowThumb">
+            <image src="{{item}}" style="width: 154rpx; height: 154rpx;"></image>
+          </view>
+
+          <view class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="bindUploadFile"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells weui-cells_form weui-cells-border mt20">
+  <view class="weui-cell weui-cell-null">
+    <view class="weui-cell__bd" bindtouchstart="bindAudio" bindtouchend="bindEndAudio"><view class="weui-label">发语音</view></view>
+    <view class="weui-cell__ft" bindtap="bindPlayAudio">|{{' '}}试听</view>
+  </view>
+</view>
+
+<view class="weui-cells weui-cells-border mt20" hidden="{{thumbShow}}">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea bindinput="bindInput" class="weui-textarea" placeholder="请输入异常设备描述" style="height: 150rpx"></textarea>
+      <view class="weui-textarea-counter"><span>0</span>/200</view>
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells weui-cells_form weui-cells-border mt20" bindtap="bindGoCheckUser">
+  <view class="weui-cell weui-cell-null weui-cell_select">
+    <view class="weui-cell__hd"><view class="weui-label">审核人：</view></view>
+    <view class="weui-cell__bd">
+      <text wx:for="{{checkUser}}">{{item.userName}}{{' '}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="weui-cells weui-cells_form weui-cells-border mt20" bindtap="bindGoCopyUser">
+  <view class="weui-cell weui-cell-null weui-cell_select">
+    <view class="weui-cell__hd"><view class="weui-label">抄送：</view></view>
+    <view class="weui-cell__bd">
+      <text wx:for="{{copyUser}}">{{item.userName}}{{' '}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="weui-msg__opr-area mt20">
+  <view class="weui-btn-area">
+    <view bindtap="submitPatrol" data-delta="2" class="weui-btn weui-btn_warn">提交异常信息</view>
+  </view>
+</view>
+
+
+<view class="weui-gallery" hidden="{{!thumbShow}}">
+  <view class="weui-gallery__img" style="background-image: url('{{thumbItemUrl}}');" bindtap="bindHideThumb"></view>
+  <view class="weui-gallery__opr" bindtap="bindDeleteThumb">
+    <view href="javascript:" class="weui-gallery__del">
+      <view class="weui-icon weui-icon-delete"></view>
+    </view>
+  </view>
+</view>-->

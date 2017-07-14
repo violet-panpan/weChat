@@ -1,0 +1,87 @@
+<view class="bg">
+  <view class="form_box">
+
+    <view class="form_item">
+      <view class="item_thumb">
+        <image src="/resources/icon_zhanghao.48.png"></image>
+      </view>
+      <view class="input_box">
+        <input  bindinput="bindInputTrueName" placeholder="输入真实姓名"></input>
+      </view>
+    </view>
+    <view class="form_item">
+      <view class="item_thumb">
+        <image src="/resources/icon_gonghao.48.png"></image>
+      </view>
+      <view class="input_box">
+        <input bindinput="bindInputJobNumber" placeholder="请输入工号"></input>
+      </view>
+    </view>
+    <view class="form_item">
+      <view class="item_thumb">
+        <image src="/resources/icon.48.png"></image>
+      </view>
+      <view class="input_box">
+        <input bindinput="bindInputMobile" placeholder="请输入手机号码"></input>
+      </view>
+    </view>
+    <view class="form_item">
+      <view class="item_thumb">
+        <image src="/resources/icon_mima.48.png@2x_90.png"></image>
+      </view>
+      <view class="input_box">
+        <input bindinput="bindInputMobileCode" placeholder="请输入验证码"></input>
+      </view>
+      <view class="mobilecode"  bindtap="sendMessageForBandUser">
+        获取验证码
+      </view>
+    </view>
+  </view>
+  <view class="button_box" bindtap="bindBandUser">
+    <view class="button_login">注册</view>
+  </view>
+</view>
+
+
+<!--
+<view class="weui-cells weui-cells_form mt20">
+  <view class="weui-cell weui-cell-null">
+    <view class="weui-cell__hd"><view class="weui-label">真实姓名</view></view>
+    <view class="weui-cell__bd">
+      <input bindinput="bindInputTrueName" class="weui-input" type="text" placeholder="请输入一个真实姓名"></input>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <view class="weui-label">工号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input bindinput="bindInputJobNumber" class="weui-input" type="text" placeholder="工号"></input>
+    </view>
+    <view class="weui-cell__ft">
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd"><view class="weui-label">手机号码</view></view>
+    <view class="weui-cell__bd">
+      <input bindinput="bindInputMobile" class="weui-input" type="number" placeholder="手机号码"></input>
+    </view>
+
+  </view>
+
+  <view class="weui-cell weui-cell_vcode">
+    <view class="weui-cell__hd"><view class="weui-label">验证码</view></view>
+    <view class="weui-cell__bd">
+      <input bindinput="bindInputMobileCode" class="weui-input" type="number" placeholder="验证码"></input>
+    </view>
+    <div class="weui-cell__ft">
+      <button class="weui-vcode-btn" bindtap="sendMessageForBandUser">获取验证码</button>
+    </div>
+  </view>
+</view>
+
+<view style="display: flex;margin-top: 40rpx">
+  <view bindtap="bindBandUser" style="width: 100%;margin-left: 30rpx;margin-right: 30rpx" class="weui-btn weui-btn_primary">绑 定</view>
+</view>-->

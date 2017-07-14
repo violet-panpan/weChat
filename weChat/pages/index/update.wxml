@@ -1,0 +1,33 @@
+<view class="weui-cells weui-cells_form mt20">
+  <view class="weui-cell weui-cell-null" style="height: 100rpx">
+    <view class="weui-cell__hd"><view class="weui-label">位置描述</view></view>
+    <view class="weui-cell__bd">
+      <input bindinput="bindInputPlaceName" class="weui-input" type="text" placeholder="请输入一个位置描述"></input>
+    </view>
+  </view>
+
+
+  <view class="weui-cell weui-cell_select">
+    <view class="weui-cell__hd"><view class="weui-label">水源类型</view></view>
+    <view class="weui-cell__bd">
+      <picker bindchange="bindSubstancePickerChange" value="{{substanceIndex}}" range="{{substanceList}}" range-key="substanceName">
+        <view class="picker">
+          {{substanceList[substanceIndex].substanceName}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="weui-cell" wx:for="{{substancePropList}}" wx:key="fieldName">
+    <view class="weui-cell__hd"><view class="weui-label">{{item.label}}</view></view>
+    <view class="weui-cell__bd">
+      <input bindinput="bindInputField" value="{{item.fieldValue}}" data-index="{{index}}" class="weui-input" type="number" placeholder=""></input>
+    </view>
+  </view>
+
+
+</view>
+
+<view style="display: flex;margin-top: 40rpx">
+  <view bindtap="bindSubmit" style="width: 100%;margin-left: 30rpx;margin-right: 30rpx" class="weui-btn weui-btn_primary">保 存</view>
+</view>

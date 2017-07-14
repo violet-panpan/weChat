@@ -1,0 +1,20 @@
+<view class="viewge">
+  <view class="viewge__hd">
+    <view class="viewge__title">{{articleDetail.title}}</view>
+    <view class="viewge__desc">发布时间 {{articleDetail.updateTime}} - 热度 {{articleDetail.hit}}</view>
+  </view>
+  <view class="viewge__bd">
+    <view class="weui-view" wx:for="{{articleDetail.contentList}}">
+      <view class="viewge__photo">
+        <image src="{{item.photo}}" mode="widthFix"></image>
+      </view>
+      <view class="viewge__text">
+        {{item.text}}
+      </view>
+    </view>
+  </view>
+
+  <view class="viewge__fd">
+    【该信息由谦程网络提供，但不代表个人观点】
+  </view>
+</view>

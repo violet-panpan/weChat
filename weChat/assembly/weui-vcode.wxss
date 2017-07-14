@@ -1,0 +1,43 @@
+/**app.wxss**/
+.weui-cell_vcode {
+  padding-top: 15rpx;
+  padding-right: 15rpx;
+  padding-bottom: 15rpx;
+  outline: 0;
+}
+.weui-vcode-img{
+  margin-left: 10rpx;
+  height: 88rpx;
+  vertical-align: middle;
+}
+
+.weui-vcode-btn {
+  display: inline-block;
+  height: 88rpx;
+  margin-left: 10rpx;
+  padding: 0 10rpx 0 10rpx;
+  border-left: 1rpx solid #E5E5E5;
+  line-height: 88rpx;
+  vertical-align: middle;
+  font-size: 34rpx;
+  color: #3CC51F;
+  background-color: transparent;
+  outline: 0;
+  border-radius: 0px;
+}
+
+.weui-vcode-btn:after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0px solid rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 0px;
+}

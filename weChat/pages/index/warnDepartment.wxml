@@ -1,0 +1,48 @@
+<view class="part1">
+  <view wx:for="{{departmentList}}" class="item" data-id="{{item.departmentID}}" bindtap="bindGoWarnUserList">
+    <view class="item_label">
+      {{item.departmentName}}
+    </view>
+    <view class="item_desc">
+
+    </view>
+    <view class="item_arrow">
+      <image src="/resources/btn_normal.png@2x.png"></image>
+    </view>
+  </view>
+</view>
+
+
+<view class="part2">
+  <view class="item border-null">
+    <view class="item_label">
+      常用对象
+    </view>
+  </view>
+</view>
+<view class="part3">
+  <view wx:for="{{userList}}" class="user" data-id="{{item.userID}}" bindtap="bindSelectUser">
+    <view class="user_arrow">
+      <image src="{{headImgUrl.length > 0 ? headImgUrl : '/resources/default_header.png'}}"></image>
+    </view>
+    <view class="user_name">
+      {{item.userName}}
+    </view>
+    <view class="user_select">
+      <image hidden="{{item.selected}}" src="/resources/radio_normal.32.png"></image>
+      <image hidden="{{!item.selected}}" src="/resources/radio_selected.32.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class="active" bindtap="bindfinish">
+  <view class="active_item_current">完成</view>
+</view>
+<!--<view wx:for="{{departmentList}}" class="weui-cells weui-cells_form weui-cells-border mt20" data-id="{{item.departmentID}}" bindtap="bindGoWarnUserList">
+  <view class="weui-cell weui-cell-null weui-cell_select">
+    <view class="weui-cell__hd"><view class="weui-label">{{item.departmentName}}</view></view>
+    <view class="weui-cell__bd"></view>
+  </view>
+</view>-->
+
+

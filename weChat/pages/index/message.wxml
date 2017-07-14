@@ -1,0 +1,17 @@
+<view class="weui-cells weui-cells-border">
+    <view class="weui-cell weui-cell-null">
+        <view class="weui-cell__bd">
+            <view>关于培训的通知</view>
+            <view style="font-size: 13px;color: #888888;">2017-03-08 12:20:22</view>
+        </view>
+    </view>
+</view>
+
+<view class="weui-cells weui-cells-border mt20">
+    <view class="weui-cell weui-cell-null">
+        <view class="weui-cell__bd">
+            <view>关于设备检查的通知</view>
+            <view style="font-size: 13px;color: #888888;">2017-03-06 08:20:22</view>
+        </view>
+    </view>
+</view>

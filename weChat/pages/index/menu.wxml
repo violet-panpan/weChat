@@ -1,0 +1,99 @@
+<!--index.wxml-->
+
+<view class="weui-cells weui-cells-border mt20">
+  <view class="weui-cell">
+    <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+      <image src="{{wxUserInfo.avatarUrl}}" style="width: 120rpx;height: 120rpx;border:6rpx solid #eeeeee;border-radius: 50%;display: block" background-size="cover"></image>
+    </view>
+    <view class="weui-cell__bd" wx:if="{{userInfo.mobile.length > 0}}">
+      <view style="font-size: 36rpx;padding-bottom: 10rpx;padding-top: 6rpx">{{userInfo.trueName}}</view>
+      <view style="font-size: 24rpx;color: #888888;line-height: 32rpx" wx:if="{{userInfo.mobile.length > 0}}"></view>
+      <view style="font-size: 24rpx;color: #888888;line-height: 32rpx" wx:if="{{userInfo.mobile.length > 0}}">手机 {{userInfo.mobile}}，工号 {{userInfo.jobNumber}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="weui-grids mt20">
+
+  <view class="weui-grid" bindtap="bindQrcode">
+    <view class="weui-grid__icon">
+      <image src="../../resources/qrcode.png"></image>
+    </view>
+    <view class="weui-grid__label">扫码</view>
+  </view>
+  <view class="weui-grid" bindtap="bindPatrolList">
+    <view class="weui-grid__icon">
+      <image src="../../resources/look.png"></image>
+    </view>
+    <view class="weui-grid__label">记录</view>
+  </view>
+  <view class="weui-grid" bindtap="bindWarnCheck">
+    <view class="weui-grid__icon">
+      <image src="../../resources/update.png"></image>
+    </view>
+    <view class="weui-grid__label">审批</view>
+  </view>
+  <view class="weui-grid" bindtap="bindWarnUpdate">
+    <view class="weui-grid__icon">
+      <image src="../../resources/histroy.png"></image>
+    </view>
+    <view class="weui-grid__label">上报</view>
+  </view>
+  <view style="display: none;" class="weui-grid" bindtap="bindWarnMylist">
+    <view class="weui-grid__icon">
+      <image src="../../resources/error.png"></image>
+    </view>
+    <view class="weui-grid__label">我发起的</view>
+  </view>
+  <view style="display: none;" class="weui-grid" bindtap="bindOtherFunction">
+    <view class="weui-grid__icon">
+      <image src="../../resources/where.png"></image>
+    </view>
+    <view class="weui-grid__label">新增地点</view>
+  </view>
+  <view style="display: none;" class="weui-grid" bindtap="bindMessage">
+    <view class="weui-grid__icon">
+      <image src="../../resources/message.png"></image>
+    </view>
+    <view class="weui-grid__label">简报</view>
+  </view>
+  <view style="display: none;" class="weui-grid" bindtap="bindOtherFunction">
+    <view class="weui-grid__icon">
+      <image src="../../resources/more.png"></image>
+    </view>
+    <view class="weui-grid__label">新闻中心</view>
+  </view>
+</view>
+
+<div class="weui-navbar mt20">
+  <div class="weui-navbar__item {{articleTypeID == 1? 'weui-bar__item_on' : ''}}" data-typeid="1" bindtap="bindUncheck">
+    新闻
+  </div>
+  <div class="weui-navbar__item {{articleTypeID == 2? 'weui-bar__item_on' : ''}}" data-typeid="2" bindtap="bindCheck">
+    法规
+  </div>
+</div>
+
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_appmsg" wx:for="{{articleList}}" data-id="{{item.articleID}}" bindtap="bindGoToDetail">
+      <view class="weui-media-box__hd">
+        <image class="weui-media-box__thumb" src="{{item.photo}}"></image>
+      </view>
+      <view class="weui-media-box__bd">
+        <view class="weui-media-box__title">{{item.title}}</view>
+        <view class="weui-media-box__desc">{{item.introduce}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!--<view class="weui-footer weui-footer_fixed-bottom">
+  <view class="weui-footer__links">
+    <view  class="weui-footer__link">杭州谦程网络技术有限公司</view>
+  </view>
+  <view class="weui-footer__text">Copyright @2017 Qiancheng</view>
+</view>-->
+
+

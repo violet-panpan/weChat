@@ -1,0 +1,36 @@
+@import "../../assembly/weui-cell.wxss";
+@import "../../assembly/weui-form-input.wxss";
+@import "../../assembly/weui-button.wxss";
+.map {
+  z-index: -10000;
+}
+.control {
+  position: absolute;
+  bottom:0;
+  left: 0;
+  display: flex;
+  height: 20vh;
+  width: 100%;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.control-label {
+  width: 50%;
+  height: 20vh;
+  background-color: #ffffff;
+  line-height: 20vh;
+  border-left: 1rpx solid #f0f0f0;
+  text-align: center;
+}
+
+.control-box {
+  width: 50%;
+  height: 20vh;
+  background-color: #ffffff;
+}
+
+.control-control {
+  width: 100%;
+  height: 20vh;
+
+}

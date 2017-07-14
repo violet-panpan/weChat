@@ -1,0 +1,15 @@
+<view class="weui-cells weui-cells_form weui-cells-border mt20">
+    <view class="weui-cell weui-cell-null weui-cell_select">
+        <view class="weui-cell__hd"><view class="weui-label">距离范围（单位米）</view></view>
+        <view class="weui-cell__bd">
+            <picker bindchange="bindRangeChange" value="{{rangeIndex}}" range="{{rangeList}}">
+                <view class="picker">
+                    {{rangeList[rangeIndex]}}
+                </view>
+            </picker>
+        </view>
+    </view>
+</view>
+<view class="weui-cells weui-cells-border map_box mt20">
+    <map class="map" id="myMap" latitude="{{location.latitude}}" longitude="{{location.longitude}}" markers="{{markers}}" scale="17" show-location="true"></map>
+</view>

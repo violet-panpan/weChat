@@ -1,0 +1,157 @@
+.warner {
+
+}
+
+.warner_item {
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+  height: 150rpx;
+  padding: 0 20rpx;
+  background-color: #FFFFFF;
+}
+.warner_item image {
+  height: 86rpx;
+  width: 86rpx;
+}
+.warner_desc {
+  flex-grow:1000;
+  padding-left: 20rpx;
+}
+
+.warner_title {
+  font-size: 32rpx;
+  color:#333333;
+}
+
+.warner_date {
+  font-size: 32rpx;
+  color:#999999;
+}
+
+.form {
+  background-color: #ffffff;
+}
+.form_item {
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+  height: 100rpx;
+  position: relative;
+  font-size: 30rpx;
+}
+
+.form_item_thumb {
+  padding: 20rpx;
+}
+
+.form_item:after {
+  content: " ";
+  position: absolute;
+  left: 20rpx;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #DfDfDf;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.form_item .form_label {
+  padding: 0 20rpx;
+  color:#999999;
+}
+.form_item .form_value {
+  padding: 0 20rpx;
+  flex-grow:1000;
+}
+
+.thumb_item {
+  margin-right: 20rpx;
+  float:left;
+}
+
+.check_user {
+  margin-top: 50rpx;
+}
+.user_item {
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 0 20rpx;
+  margin-bottom: 42rpx;
+}
+.user_item .user_thumb{
+  height: 86rpx;
+  width: 86rpx;
+}
+.user_desc {
+  height: 88rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 6rpx 0 0rpx 6rpx;
+  background-color: #ffffff;
+  flex-grow:1000;
+  margin-left: 41rpx;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+}
+
+.user_desc .user_icon {
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.user_desc .user_title{
+  margin:0  30rpx 0 10rpx;
+  color:#333333;
+}
+
+.user_desc .user_arrow{
+  display:block;
+  width:0;
+  height:0;
+  border-width:20rpx 20rpx 20rpx 0;
+  border-style:solid;
+  border-color:transparent #ffffff transparent transparent;/*透明 黄 透明 透明 */
+  position:absolute;
+  top:50%;
+  left:-18rpx;
+  margin-top: -20rpx;
+}
+
+.user_date {
+  height: 88rpx;
+  background-color: #ffffff;
+  border-radius: 0 6rpx 6rpx 0;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  padding-right: 20rpx;
+  color:#999999;
+
+}
+
+.active {
+  display: flex;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.active view{
+  width: 50%;
+  text-align: center;
+  color:#ff5255;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.active .active_item_current {
+  background-color: #F25E4C;
+  color:#ffffff;
+}

@@ -1,0 +1,24 @@
+.weui-footer {
+  color: #999999;
+  font-size: 24rpx;
+  text-align: center;
+}
+.weui-footer_fixed-bottom{
+  position: fixed;
+  bottom: 16rpx;
+  left: 0;
+  right: 0;
+}
+.weui-footer__links{
+  font-size: 0;
+}
+.weui-footer__link{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  font-size: 24rpx;
+}
+.weui-footer__text{
+  padding: 0 .34em;
+  font-size: 22rpx;
+}

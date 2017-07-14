@@ -1,0 +1,104 @@
+<view class="search">
+  <image bindtap="bindQrcode" class="header_header" src="/resources/qrcode2.png"></image>
+  <view class="search_box"></view>
+  <image bindtap="bindQrcode" class="header_add" src="/resources/qrcode2.png"></image>
+</view>
+<view class="menu">
+  <!--<view class="menu_item">
+    <image src="/resources/btn_first_normal.png"></image>
+    <text>扫码</text>
+  </view>-->
+  <view class="menu_item" bindtap="bindPatrolList">
+    <image src="/resources/btn_second_normal.png"></image>
+    <text>巡查记录</text>
+  </view>
+  <view class="menu_item" bindtap="bindWarnCheck">
+    <image src="/resources/btn_third_normal.png"></image>
+    <text>{{roleID == 1 ? '异常处理' : '待我审批'}}</text>
+  </view>
+  <view class="menu_item" bindtap="bindWarn">
+    <image src="/resources/btn_fourth_normal.png"></image>
+    <text>上报</text>
+  </view>
+  <view class="menu_item" bindtap="bindEvent">
+    <image src="/resources/send_event.png"></image>
+    <text>事件</text>
+  </view>
+</view>
+<!--<view class="event mt20" wx:if="{{work.workID > 0}}">
+  <view class="event_item">
+    <image class="event_icon" src="/resources/head_guzhang_default.png"></image>
+    <image bindtap="bindEventCancel" class="event_dian" src="/resources/btn_normal_88.png"></image>
+    <view class="event_content">
+      <view class="event_content_title">{{work.title}}</view>
+      <view class="event_content_date">{{work.addtime}}</view>
+      <view class="event_content_desc">{{work.placeName}}</view>
+    </view>
+  </view>
+  <view class="event_do" bindtap="bindEventDo" data-id="{{work.workID}}" data-module="{{work.module}}">
+    <text>立即处理</text>
+  </view>
+</view>-->
+
+
+<view class="list mt20" wx:if="{{work.workID > 0}}">
+  <view class="list_item" bindtap="bindEventDo" data-id="{{work.workID}}" data-module="{{work.module}}">
+    <view class="item_thumb"><image src="/resources/icon_guzhang_80.png@2x.png"></image></view>
+    <view class="item_desc">
+      <view class="item_title">{{work.title}}</view>
+      <view class="item_status">{{work.addtime}}</view>
+    </view>
+    <view class="item_date">处理</view>
+  </view>
+</view>
+
+<view class="article mt20 mb">
+
+  <view class="tag">
+    <view class="tag_item" data-typeid="1" bindtap="bindUncheck">
+      <view class="{{articleTypeID == 1? 'tag_item_current' : ''}}">
+        新闻
+      </view>
+    </view>
+    <view class="tag_item" data-typeid="2" bindtap="bindCheck">
+      <view class="{{articleTypeID == 2? 'tag_item_current' : ''}}">
+        法规
+      </view>
+    </view>
+    <view class="tag_item" data-typeid="3" bindtap="bindCheck">
+      <view class="{{articleTypeID == 3? 'tag_item_current' : ''}}">
+        视频
+      </view>
+    </view>
+  </view>
+
+  <!--<view class="article_tag">
+    <view  class="tag_item {{articleTypeID == 1? 'article_tag_current' : ''}}" data-typeid="1" bindtap="bindUncheck">新闻</view>
+    <view  class="tag_item {{articleTypeID == 2? 'article_tag_current' : ''}}" data-typeid="2" bindtap="bindCheck">法规</view>
+    &lt;!&ndash;<view  class="tag_item">订阅</view>&ndash;&gt;
+  </view>-->
+  <view class="article_content">
+    <view class="article_item"  wx:for="{{articleList}}" data-id="{{item.articleID}}" bindtap="bindGoToDetail">
+      <image class="article_thumb"  src="{{item.photo}}"></image>
+      <view class="article_date">1小时</view>
+      <view class="article_number">
+        <view class="article_number_item" style="margin-right: 14rpx">
+          <image src="/resources/icon_disabled.28.png"></image>
+        </view>
+        <view class="article_number_item" style="margin-right: 20rpx">
+          <text>{{item.hit}}</text>
+        </view>
+        <view class="article_number_item" style="margin-right: 14rpx">
+          <image src="/resources/icon_shoucangdisabled.28.png"></image>
+        </view>
+        <view class="article_number_item">
+          <text>0</text>
+        </view>
+      </view>
+      <view class="article_text">
+        <view class="article_title">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+

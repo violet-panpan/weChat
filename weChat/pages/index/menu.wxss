@@ -1,0 +1,17 @@
+@import "../../assembly/weui-cell.wxss";
+@import "../../assembly/weui-grid.wxss";
+@import "../../assembly/weui-footer.wxss";
+@import "../../assembly/weui-navbar.wxss";
+@import "../../assembly/weui-media-box.wxss";
+.weui-grid {
+  width: 25%;
+}
+
+.weui-navbar {
+  position: inherit;
+}
+
+.weui-media-box__thumb {
+  width: 160rpx;
+  height: 120rpx;
+}

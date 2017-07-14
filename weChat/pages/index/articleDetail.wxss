@@ -1,0 +1,69 @@
+.viewge {
+  padding: 40rpx;
+  background-color: #ffffff;
+}
+
+
+.viewge .viewge__hd {
+  position: relative;
+}
+
+.viewge .viewge__hd:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.viewge .viewge__hd .viewge__title {
+  font-size: 50rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+
+
+.viewge .viewge__hd .viewge__desc {
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 60rpx;
+  color:#999999
+}
+
+.viewge .viewge__bd {
+  margin-top: 50rpx;
+}
+
+.viewge .viewge__bd image {
+  width: 100%;
+}
+
+.viewge .viewge__photo {
+  margin: 30rpx 0;
+}
+
+.viewge .viewge__text {
+  font-size: 34rpx;
+  margin: 30rpx 0;
+  text-indent: 68rpx;
+  line-height: 50rpx;
+}
+
+.viewge__fd {
+  margin-top: 100rpx;
+  margin-bottom: 80rpx;
+  font-size: 28rpx;
+  color: #999999;
+  text-align: center;
+}
+
+
+

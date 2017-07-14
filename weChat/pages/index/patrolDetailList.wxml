@@ -1,0 +1,52 @@
+<view>
+  <map id="myMap" latitude="{{mapCenterPoint.latitude}}" longitude="{{mapCenterPoint.longitude}}"  style="height:495rpx;width: 100%" markers="{{markers}}" polyline="{{polyline}}" scale="17"></map>
+</view>
+<view class="content_list mt20">
+  <view class="item" wx:for="{{patrolDetailList}}"  data-patrol-i-d="{{item.patrolID}}" data-status="{{item.status}}" bindtap="bindGoPatrolDetailContentList">
+    <view class="item_time">
+      <view>{{item.time}}</view>
+      <view>{{item.date}}</view>
+    </view>
+    <view class="item_thumb">
+      <view wx:if="{{item.status == 0}}" class="item_icon item_icon_no"></view>
+      <view wx:elif="{{item.status == 1}}" class="item_icon item_icon_ok"></view>
+      <view wx:elif="{{item.status == 2}}" class="item_icon item_icon_ing"></view>
+      <view wx:elif="{{item.status == 3}}" class="item_icon item_icon_warn"></view>
+    </view>
+    <view class="item_name">
+      {{item.placeName}}
+      <view class="item_truename">
+        {{item.userName}}
+      </view>
+    </view>
+    <view class="item_status">
+      {{item.statusText}}
+    </view>
+    <view class="item_arrow">
+      <image src="/resources/btn_normal.png@2x.png"></image>
+    </view>
+  </view>
+</view>
+<!--<view class="weui-panel">
+  <view class="weui-panel__hd">更新时间：{{updateTime}}</view>
+</view>
+
+<view class="weui-panel mt20">
+  <view class="weui-panel__hd">巡检完成度：{{actualNumber}} / {{totalNumber}}</view>
+</view>
+
+<view wx:for="{{patrolDetailList}}" class="weui-panel mt20" data-patrol-i-d="{{item.patrolID}}" data-status="{{item.status}}" bindtap="bindGoPatrolDetailContentList">
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title">{{item.placeName}}</view>
+      <view class="weui-media-box__desc" wx:if="{{item.status == 1}}">巡检时间 {{item.addtime}}，巡检人 {{item.userName}}</view>
+      <view class="weui-media-box__info">
+        <view class="weui-media-box__info__meta">{{item.statusText}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="finishButton" bindtap="bindGPS">轨迹</view>-->
+
+

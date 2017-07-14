@@ -1,0 +1,3 @@
+@import "../../assembly/weui-cell.wxss";
+@import "../../assembly/weui-form-input.wxss";
+@import "../../assembly/weui-button.wxss";

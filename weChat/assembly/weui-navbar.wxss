@@ -1,0 +1,42 @@
+/**app.wxss**/
+.weui-navbar {
+  display: flex;
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  width: 100%;
+  background-color: #FAFAFA;
+}
+
+.weui-navbar .weui-tab__panel {
+  padding-top: 100rpx;
+  padding-bottom: 0;
+}
+
+.weui-navbar__item {
+  position: relative;
+  display: block;
+  flex: 1;
+  padding: 26rpx 0;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.weui-bar__item_on {
+  background-color: #EAEAEA;
+}
+
+.weui-navbar__item:after{
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1rpx;
+  bottom: 0;
+  border-right: 1rpx solid #CCCCCC;
+  color: #CCCCCC;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}

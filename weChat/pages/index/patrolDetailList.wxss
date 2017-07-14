@@ -1,0 +1,113 @@
+.content_list {
+  background-color: #ffffff;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  height: 130rpx;
+  padding: 0 20rpx;
+  position: relative;
+
+}
+
+.item:after {
+  content: " ";
+  position: absolute;
+  left: 133rpx;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #dfdfdd;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+
+.item_time {
+  width: 80rpx;
+  flex-shrink:0;
+  color:#999999;
+  font-size: 24rpx;
+}
+.item_thumb {
+  position: relative;
+  height: 130rpx;
+  width: 22rpx;
+}
+
+.item_thumb:after {
+  content: " ";
+  position: absolute;
+  right: 50%;
+  top: 0;
+  width: 1rpx;
+  bottom: 0;
+  border-right: 1rpx solid #dfdfdd;
+  color: #D9D9D9;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  z-index: 0;
+}
+
+.item_thumb .item_icon {
+  height: 22rpx;
+  width: 22rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top:50%;
+  margin-top: -11rpx;
+  z-index: 999;
+}
+
+.item_thumb .item_icon_ok {
+  background-color: #4AB247;
+}
+
+.item_thumb .item_icon_warn {
+  background-color: #F25E4C;
+}
+
+.item_thumb .item_icon_no {
+  background-color: #DBD6D6;
+}
+
+.item_thumb .item_icon_ing {
+  background-color: #00a7ff;
+}
+
+.item_name {
+  flex-grow: 1000;
+  flex-shrink:1000;
+  font-size:28rpx;
+  padding-left:15rpx;
+}
+.item_truename {
+  position: absolute;
+  left: 137rpx;
+  bottom:10rpx;
+  font-size: 20rpx;
+}
+
+.item_status {
+  font-size: 28rpx;
+  color: #999999;
+  word-break:keep-all
+}
+
+.item_arrow image{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}
+
+
+.user {
+
+}

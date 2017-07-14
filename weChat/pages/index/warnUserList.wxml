@@ -1,0 +1,15 @@
+
+<view class="weui-cells weui-cells-border weui-cells_checkbox mt20">
+  <view wx:for="{{userList}}" data-id="{{item.userID}}" bindtap="bindSelectUser" class="weui-cell weui-cell-null weui-check__label" for="s11">
+    <view class="weui-cell__hd">
+      <view hidden="{{item.selected}}" class="weui-icon weui-icon-circle"></view>
+      <view hidden="{{!item.selected}}" class="weui-icon-success weui-icon-circle"></view>
+    </view>
+    <view class="weui-cell__bd">
+      <view style="padding-left: 20rpx">{{item.userName}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="finishButton" bindtap="bindfinish">完成</view>

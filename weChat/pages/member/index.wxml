@@ -1,0 +1,104 @@
+<view class="header">
+  <image class="avtor" src="{{wxUserInfo.avatarUrl}}"></image>
+  <view class="userinfo">
+    <text class="truename">{{userInfo.trueName}}</text>
+    <text class="mobile">{{userInfo.mobile}}</text>
+  </view>
+  <view class="department">
+    <text>{{userInfo.jobNumber}}</text>
+  </view>
+</view>
+
+<view class="stat">
+  <view class="stat_column stat_column_left">
+    <view class="stat_title">
+      今日
+    </view>
+    <view class="stat_box">
+      <view class="stat_box_column">
+        <view class="stat_box_column_label">
+            上报异常
+        </view>
+        <view class="stat_box_column_value">
+            0
+        </view>
+      </view>
+      <view class="stat_box_column">
+        <view class="stat_box_column_label">
+          上报异常
+        </view>
+        <view class="stat_box_column_value">
+            0
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="stat_column">
+    <view class="stat_title">
+      累计
+    </view>
+    <view class="stat_box">
+      <view class="stat_box_column">
+        <view class="stat_box_column_label">
+          上报异常
+        </view>
+        <view class="stat_box_column_value">
+          0
+        </view>
+      </view>
+      <view class="stat_box_column">
+        <view class="stat_box_column_label">
+          上报异常
+        </view>
+        <view class="stat_box_column_value">
+          0
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="function mt20">
+  <view class="function_item function_item_border" bindtap="bindLanya">
+    <image src="/resources/icon_normal.50.png@2x_23.png"></image>
+    <text class="function_title">位置测试</text>
+    <image class="function_arrow" src="/resources/btn_normal.png@2x.png"></image>
+  </view>
+  <view class="function_item function_item_border" bindtap="clearBeat">
+    <image src="/resources/icon_normal.50.png@2x_89.png"></image>
+    <text class="function_title">清空缓存</text>
+    <text class="function_ext">0M</text>
+    <image class="function_arrow" src="/resources/btn_normal.png@2x.png"></image>
+  </view>
+  <view class="function_item function_item_border" bindtap="updateBeat">
+    <image src="/resources/icon_normal.50.png@2x_55.png"></image>
+    <text class="function_title">检查更新</text>
+    <text class="function_ext">v1.09</text>
+    <image class="function_arrow" src="/resources/btn_normal.png@2x.png"></image>
+  </view>
+  <view class="function_item">
+    <image src="/resources/icon_normal.50.png@2x.png"></image>
+    <text class="function_title">关于</text>
+    <image class="function_arrow" src="/resources/btn_normal.png@2x.png"></image>
+  </view>
+</view>
+
+<view class="exit" bindtap="bindLogout">
+  <view>注销</view>
+</view>
+
+<!--<view class="weui-cells weui-cells-border mt20">
+  <view class="weui-cell">
+    <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+      <image src="{{wxUserInfo.avatarUrl}}" style="width: 120rpx;height: 120rpx;border:6rpx solid #eeeeee;border-radius: 50%;display: block" background-size="cover"></image>
+    </view>
+    <view class="weui-cell__bd" wx:if="{{userInfo.mobile.length > 0}}">
+      <view style="font-size: 36rpx;padding-bottom: 10rpx;padding-top: 6rpx">{{userInfo.trueName}}</view>
+      <view style="font-size: 24rpx;color: #888888;line-height: 32rpx" wx:if="{{userInfo.mobile.length > 0}}"></view>
+      <view style="font-size: 24rpx;color: #888888;line-height: 32rpx" wx:if="{{userInfo.mobile.length > 0}}">手机 {{userInfo.mobile}}，工号 {{userInfo.jobNumber}}</view>
+    </view>
+  </view>
+</view>-->
+
+

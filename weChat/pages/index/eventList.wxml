@@ -1,0 +1,115 @@
+<view class="tag" wx:if="{{roleID == 1}}">
+  <view class="tag_item" bindtap="bindGetUndealTemporaryWorkList">
+    <view class="{{type == 1? 'tag_item_current' : ''}}">
+      未执行
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetTemporaryWorkList">
+    <view class="{{type == 2? 'tag_item_current' : ''}}">
+      已处理
+    </view>
+  </view>
+</view>
+
+
+<view class="tag" wx:if="{{roleID == 2}}">
+  <view class="tag_item" bindtap="bindGetUndealTemporaryWorkList1">
+    <view class="{{type == 1? 'tag_item_current' : ''}}">
+      未执行
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetTemporaryWorkList1">
+    <view class="{{type == 2? 'tag_item_current' : ''}}">
+      已处理
+    </view>
+  </view>
+</view>
+
+
+<view class="tag" wx:if="{{roleID == 3}}">
+  <view class="tag_item" bindtap="bindGetUndealTemporaryWorkList2">
+    <view class="{{type == 1? 'tag_item_current' : ''}}">
+      未执行
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetTemporaryWorkList2">
+    <view class="{{type == 2? 'tag_item_current' : ''}}">
+      已处理
+    </view>
+  </view>
+</view>
+
+
+
+<!--<view class="tag" wx:if="{{roleID == 2}}">
+  <view class="tag_item" bindtap="bindGetUnOfferWarnList">
+    <view class="{{type == 1? 'tag_item_current' : ''}}">
+      待提议
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetHadOfferWarnList">
+    <view class="{{type == 2? 'tag_item_current' : ''}}">
+      已提议
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetHadSubmitWarnList2">
+    <view class="{{type == 3? 'tag_item_current' : ''}}">
+      已上报
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetHadDealWarnList2">
+    <view class="{{type == 4? 'tag_item_current' : ''}}">
+      已处理
+    </view>
+  </view>
+</view>
+
+<view class="tag" wx:if="{{roleID == 3}}">
+  <view class="tag_item" bindtap="bindGetUnOfferWarnList3">
+    <view class="{{type == 1? 'tag_item_current' : ''}}">
+      待提议
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetHadOfferWarnList3">
+    <view class="{{type == 2? 'tag_item_current' : ''}}">
+      已提议/已同意
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetDealingWarnList">
+    <view class="{{type == 3? 'tag_item_current' : ''}}">
+      处理中
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetHadDealWarnList3">
+    <view class="{{type == 4? 'tag_item_current' : ''}}">
+      已处理
+    </view>
+  </view>
+</view>-->
+
+
+
+<view class="list mt20">
+  <view class="list_item" wx:for="{{workList}}"  data-id="{{item.workID}}" bindtap="bindGoDetail">
+    <view class="item_thumb"><image src="/resources/shi.png"></image></view>
+    <view class="item_desc">
+      <view class="item_title">{{item.title}}</view>
+      <view class="item_status">{{item.updatetime}}</view>
+    </view>
+    <view class="item_date"></view>
+  </view>
+
+  <view class="list_item" wx:if="{{workList.length == 0}}">
+    <view class="item_desc">
+      <view class="item_title" style="text-align: center">{{nolistMessage}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view wx:if="{{roleID > 1}}" bindtap="bindEventPublish" class="active">
+  <view class="active_item_current">发起新事件</view>
+</view>
+
+
+

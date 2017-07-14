@@ -1,0 +1,20 @@
+@import "../../assembly/weui-cell.wxss";
+@import "../../assembly/weui-uploader.wxss";
+@import "../../assembly/weui-button.wxss";
+@import "../../assembly/weui-font.wxss";
+
+
+
+.weui-textarea {
+  display: block;
+  border: 0;
+  resize: none;
+  width: 100%;
+  color: inherit;
+  font-size: 1em;
+  line-height: inherit;
+  outline: 0;
+}
+
+
+

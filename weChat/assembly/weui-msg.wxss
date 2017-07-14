@@ -1,0 +1,29 @@
+.weui-msg {
+  padding-top: 72rpx;
+  text-align: center;
+}
+.weui-msg__icon-area {
+  margin-bottom: 60rpx;
+}
+.weui-msg__text-area {
+  margin-bottom: 50rpx;
+  padding: 0 40rpx;
+}
+.weui-msg__text-area a{
+  color: #586C94;
+}
+.weui-msg__title {
+  margin-bottom:10rpx;
+  font-weight: 400;
+  font-size: 40rpx;
+}
+.weui-msg__desc {
+  font-size: 28rpx;
+  color: #999999;
+}
+.weui-msg__opr-area {
+  margin-bottom: 50rpx;
+}
+.weui-icon_msg {
+  font-size: 186px;
+}

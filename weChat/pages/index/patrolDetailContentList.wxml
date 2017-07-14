@@ -1,0 +1,36 @@
+<view class="part1">
+  <view class="item border-null">
+    <view class="item_label">
+      以下为巡检内容
+    </view>
+    <!--<view class="item_desc" style="padding-left: 20rpx">
+      {{typeName}}，的巡检内容
+    </view>-->
+  </view>
+</view>
+
+<view class="part2 mt20 mb">
+  <view class="item" wx:for="{{placeContentList}}">
+    <view class="item_desc ">
+      {{index + 1}}、{{item.contentName}}
+    </view>
+  </view>
+</view>
+
+<view class="active" bindtap="bindGoback">
+  <view class="active_item_current">确定</view>
+</view>
+
+<!--
+<view class="weui-panel">
+  <view class="weui-panel__hd">检查类型：{{typeName}}</view>
+</view>
+
+<view wx:for="{{placeContentList}}" class="weui-panel mt20">
+  <view class="weui-panel__hd">{{item.contentName}}，{{item.status == 1 ? '正常' : '异常'}}</view>
+</view>
+-->
+
+
+
+

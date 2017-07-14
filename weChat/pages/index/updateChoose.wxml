@@ -1,0 +1,9 @@
+<map class="map" id="myMap" latitude="{{location.latitude}}" longitude="{{location.longitude}}" markers="{{markers}}" style="height:80vh;;width: 100%" scale="17" show-location="true" bindtap="bingMapClick"></map>
+<view class="control">
+  <view class="control-box">
+    <view class="control-control" bindtouchmove="bindmove" bindtouchend="bindtouchend"></view>
+  </view>
+  <view class="control-label" bindtap="bindGoBack">
+    完成校准后点我
+  </view>
+</view>

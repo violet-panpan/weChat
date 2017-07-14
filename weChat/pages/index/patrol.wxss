@@ -1,0 +1,6 @@
+@import "../../assembly/weui-cell.wxss";
+@import "../../assembly/weui-button.wxss";
+
+.item {
+  font-size: 28rpx;color: #888888;line-height: 44rpx
+}

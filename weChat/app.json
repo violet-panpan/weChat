@@ -1,0 +1,59 @@
+{
+  "pages":[
+    "pages/index/door",
+    "pages/index/index",
+    "pages/index/patrolList",
+    "pages/index/warnDepartment",
+    "pages/index/eventPublish",
+    "pages/index/eventList",
+    "pages/member/login",
+    "pages/member/lanya",
+    "pages/index/patrolDetailList",
+    "pages/index/warn",
+    "pages/index/warnCheck",
+    "pages/member/index",
+    "pages/index/menu",
+    "pages/index/patrol",
+    "pages/index/msg",
+    "pages/index/place",
+    "pages/index/update",
+    "pages/index/other",
+    "pages/index/gps",
+    "pages/index/message",
+    "pages/index/updateChoose",
+    "pages/index/patrolDetailContentList",
+    "pages/index/warnUserList",
+    "pages/index/warnMyList",
+    "pages/index/warnDetail",
+    "pages/index/articleDetail",
+    "pages/newspaper/index",
+    "pages/member/band"
+  ],
+  "tabBar": {
+    "color":"#515151",
+    "selectedColor":"#F25E4C",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"resources/nav1.png",
+      "selectedIconPath":"resources/nav1_select.png"
+    }, {
+      "pagePath": "pages/newspaper/index",
+      "text": "简报",
+      "iconPath":"resources/nav2.png",
+      "selectedIconPath":"resources/nav2_select.png"
+    }, {
+      "pagePath": "pages/member/index",
+      "text": "我的",
+      "iconPath":"resources/nav3.png",
+      "selectedIconPath":"resources/nav3_select.png"
+    }]
+  },
+  "window":{
+    "navigationBarBackgroundColor":"#F25E4C",
+    "navigationBarTextStyle": "light",
+    "navigationBarTitleText": "消防设备巡检",
+    "backgroundTextStyle":"light",
+    "backgroundColor":"#f2f2f2"
+  }
+}

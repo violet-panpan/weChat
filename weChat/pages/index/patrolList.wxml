@@ -1,0 +1,116 @@
+<view class="type">
+  <view class="type_condition">
+      <image src="/resources/btn_normal_shaixuan@2x.png"></image>
+  </view>
+  <view class="type_box">
+    <view class="type_list">
+      <view wx:for="{{typeList}}" class="type_item {{currentTypeID == item.typeID ? 'type_item_current' : ''}}" data-id="{{item.typeID}}" bindtap="bindChangeType">
+        {{item.typeName}}
+      </view>
+      <view class="type_item {{currentTypeID == 0 ? 'type_item_current' : ''}}" bindtap="bindChangeModule">
+        事件
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content_box mt20">
+  <view class="content_list">
+    <view class="content_item" wx:for="{{patrolList}}" data-type-i-d="{{item.typeID}}" data-patrol-icon="{{item.patrolIcon}}" bindtap="bindGoPatrolDetailList">
+      <view class="content_item_title">{{item.typeName}}{{item.title}}</view>
+      <view class="content_item_common">
+        <image src="/resources/icon_disabled.38.png@2x.png"></image>
+        <text>计划巡检时间 {{item.planTime}}</text>
+      </view>
+      <view class="content_item_common">
+        <image src="/resources/icon_disabled.38.png@2x_79.png"></image>
+        <text>{{item.userName}}</text>
+      </view>
+      <view class="content_item_common">
+        <image src="/resources/icon_disabled.38.png@2x_77.png"></image>
+        <text>应检查 {{item.totalNumber}}个 已巡查 {{item.actualNumber}}个 异常项 {{item.warnNumber}}个</text>
+      </view>
+      <view class="content_item_active">
+        查看详细
+      </view>
+      <view class="content_item_status">
+        <view wx:if="{{item.warnNumber > 0}}" class="status status_warn">有异常</view>
+        <view wx:if="{{item.status == 1}}" class="status status_ing">巡检中</view>
+        <view wx:if="{{item.status == 2}}" class="status status_warn">已逾期</view>
+        <view wx:if="{{item.status ==3}}" class="status status_finish">已完成</view>
+
+      </view>
+    </view>
+
+    <view wx:if="{{patrolList.length == 0}}" class="content_item">
+      <view class="content_item_title" style="text-align: center;padding-bottom: 20rpx">{{nolistMessage}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view wx:if="{{conditionBox}}" class="condition" bindtap="bindConditionBox">
+  <view class="condition_content">
+    <view class="part1">
+      <view class="item">
+        <view class="item_label">
+          今天
+        </view>
+        <view class="item_desc">
+
+        </view>
+        <view class="item_arrow">
+          <image src="/resources/radio_normal.32.png"></image>
+        </view>
+      </view>
+
+      <view class="item">
+        <view class="item_label">
+          今天
+        </view>
+        <view class="item_desc">
+
+        </view>
+        <view class="item_arrow">
+          <image src="/resources/radio_normal.32.png"></image>
+        </view>
+      </view>
+
+      <view class="item">
+        <view class="item_label">
+          今天
+        </view>
+        <view class="item_desc">
+
+        </view>
+        <view class="item_arrow">
+          <image src="/resources/radio_selected.32.png"></image>
+        </view>
+      </view>
+
+      <view class="item">
+        <view class="item_label">
+          开始时间
+        </view>
+        <view class="item_desc">
+          2016-12-12
+        </view>
+        <view class="item_arrow">
+          <image src="/resources/btn_normal.png@2x.png"></image>
+        </view>
+      </view>
+
+      <view class="item">
+        <view class="item_label">
+          结束时间
+        </view>
+        <view class="item_desc">
+          2016-12-12
+        </view>
+        <view class="item_arrow">
+          <image src="/resources/btn_normal.png@2x.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

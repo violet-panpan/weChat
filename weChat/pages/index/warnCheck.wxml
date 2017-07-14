@@ -1,0 +1,147 @@
+<view class="tag" wx:if="{{roleID == 1}}">
+  <view class="tag_item" bindtap="bindGetHadSubmitWarnList">
+    <view class="{{type == 1? 'tag_item_current' : ''}}">
+      已上报
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetUnDealWarnList">
+    <view class="{{type == 2? 'tag_item_current' : ''}}">
+      待处理
+    </view>
+  </view>
+  <view class="tag_item {{type == 3? 'tag_item_current' : ''}}" bindtap="bindGetHadDealWarnList">
+    <view class="{{type == 3? 'tag_item_current' : ''}}">
+      已处理
+    </view>
+  </view>
+</view>
+
+<view class="tag" wx:if="{{roleID == 2}}">
+  <view class="tag_item" bindtap="bindGetUnOfferWarnList">
+    <view class="{{type == 1? 'tag_item_current' : ''}}">
+      待提议
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetHadOfferWarnList">
+    <view class="{{type == 2? 'tag_item_current' : ''}}">
+      已提议
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetHadSubmitWarnList2">
+    <view class="{{type == 3? 'tag_item_current' : ''}}">
+      已上报
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetHadDealWarnList2">
+    <view class="{{type == 4? 'tag_item_current' : ''}}">
+      已处理
+    </view>
+  </view>
+</view>
+
+<view class="tag" wx:if="{{roleID == 3}}">
+  <view class="tag_item" bindtap="bindGetUnOfferWarnList3">
+    <view class="{{type == 1? 'tag_item_current' : ''}}">
+      待提议
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetHadOfferWarnList3">
+    <view class="{{type == 2? 'tag_item_current' : ''}}">
+      已提议/已同意
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetDealingWarnList">
+    <view class="{{type == 3? 'tag_item_current' : ''}}">
+      处理中
+    </view>
+  </view>
+  <view class="tag_item" bindtap="bindGetHadDealWarnList3">
+    <view class="{{type == 4? 'tag_item_current' : ''}}">
+      已处理
+    </view>
+  </view>
+</view>
+
+
+
+<view class="list mt20">
+  <view class="list_item" wx:for="{{warnList}}"  data-id="{{item.warnID}}" bindtap="bindGoWarnDetail">
+    <view class="item_thumb"><image src="/resources/icon_guzhang_80.png@2x.png"></image></view>
+    <view class="item_desc">
+      <view class="item_title">{{item.title}}</view>
+      <view class="item_status">{{item.updateTime}}</view>
+    </view>
+    <view class="item_date"></view>
+  </view>
+
+  <view class="list_item" wx:if="{{warnList.length == 0}}">
+    <view class="item_desc">
+      <view class="item_title" style="text-align: center">{{nolistMessage}}</view>
+    </view>
+  </view>
+</view>
+
+<!--<div class="weui-tab">
+  <div class="weui-navbar" wx:if="{{roleID == 1}}">
+    <div class="weui-navbar__item {{type == 1? 'weui-bar__item_on' : ''}}" bindtap="bindGetHadSubmitWarnList">
+      已上报
+    </div>
+    <div class="weui-navbar__item {{!type == 2? 'weui-bar__item_on' : ''}}" bindtap="bindGetUnDealWarnList">
+      待处理
+    </div>
+    <div class="weui-navbar__item {{type == 3? 'weui-bar__item_on' : ''}}" bindtap="bindGetHadDealWarnList">
+      已处理
+    </div>
+  </div>
+
+  <div class="weui-navbar" wx:if="{{roleID == 2}}">
+    <div class="weui-navbar__item {{type == 1? 'weui-bar__item_on' : ''}}" bindtap="bindGetUnOfferWarnList">
+      待提议
+    </div>
+    <div class="weui-navbar__item {{type == 2? 'weui-bar__item_on' : ''}}" bindtap="bindGetHadOfferWarnList">
+      已提议
+    </div>
+    <div class="weui-navbar__item {{type == 3? 'weui-bar__item_on' : ''}}" bindtap="bindGetHadSubmitWarnList2">
+      已上报
+    </div>
+    <div class="weui-navbar__item {{type == 4? 'weui-bar__item_on' : ''}}" bindtap="bindGetHadDealWarnList2">
+      已处理
+    </div>
+  </div>
+
+  <div class="weui-navbar" wx:if="{{roleID == 3}}">
+    <div class="weui-navbar__item {{type == 1? 'weui-bar__item_on' : ''}}" bindtap="bindGetUnOfferWarnList3">
+      待提议
+    </div>
+    <div class="weui-navbar__item {{type == 2? 'weui-bar__item_on' : ''}}" bindtap="bindGetHadOfferWarnList3">
+      已提议/已同意
+    </div>
+    <div class="weui-navbar__item {{type == 3? 'weui-bar__item_on' : ''}}" bindtap="bindGetDealingWarnList">
+      处理中
+    </div>
+    <div class="weui-navbar__item {{type == 4? 'weui-bar__item_on' : ''}}" bindtap="bindGetHadDealWarnList3">
+      已处理
+    </div>
+  </div>
+
+  <div class="weui-tab__panel ">
+    <view style="margin-top:150rpx;">
+      <view wx:for="{{warnList}}" class="weui-panel mt20" data-id="{{item.warnID}}" bindtap="bindGoWarnDetail">
+        <view class="weui-panel__bd">
+          <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box__title">{{item.title}}</view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{item.statusText}}</view>
+            </view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">更新时间</view>
+              <view class="weui-media-box__info__meta">{{item.updateTime}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </div>
+</div>-->
+
+

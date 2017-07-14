@@ -1,0 +1,137 @@
+<view class="warner">
+  <view class="warner_item">
+    <image src="/resources/icon_guzhang_80.png@2x.png"></image>
+    <view class="warner_desc">
+      <view class="warner_title">{{warnDetail.name}}发起的{{warnDetail.title}}</view>
+    </view>
+    <view class="warner_date">{{warnDetail.addtime}}</view>
+  </view>
+</view>
+
+<view class="form mt20">
+  <view class="form_item">
+    <view class="form_label">
+      类型
+    </view>
+    <view class="form_value">
+      {{warnDetail.title}}
+    </view>
+  </view>
+
+  <view class="form_item">
+    <view class="form_label">
+      描述
+    </view>
+    <view class="form_value">
+      {{warnDetail.textDescription}}
+    </view>
+  </view>
+
+  <view class="form_item">
+    <view class="form_label">
+      语音
+    </view>
+    <view class="form_value">
+      <!--{{warnDetail.voiceDescription}}-->
+    </view>
+  </view>
+
+  <view class="form_item_thumb">
+    <view class="thumb_item" wx:for="{{thumbs}}" data-url="{{item}}" bindtap="bindShowThumb">
+      <image src="{{item}}" style="width: 154rpx; height: 154rpx;"></image>
+    </view>
+  </view>
+</view>
+
+<view class="check_user">
+  <view wx:for="{{warnDetail.cheskMsg}}" class="user_item">
+    <image class="user_thumb" src="/resources/icon_guzhang_80.png@2x.png"></image>
+    <view class="user_desc">
+      <image class="user_icon" src="/resources/icon_guzhang_80.png@2x.png"></image>
+      <view class="user_title">梁晓峰</view>
+      <view class="user_status">发起申请</view>
+      <view class="user_arrow"></view>
+    </view>
+    <view class="user_date">2012-12-20</view>
+  </view>
+</view>
+
+<view class="active">
+  <view class="active_item_current">不同意</view>
+  <view>同意</view>
+</view>
+
+
+<!--<view class="weui-form-preview mt20">
+  <view class="weui-form-preview__bd">
+    <view class="weui-form-preview__item">
+      <view class="weui-form-preview__label">故障主题</view>
+      <view class="weui-form-preview__value">{{warnDetail.title}}</view>
+    </view>
+    <view class="weui-form-preview__item">
+      <view class="weui-form-preview__label">故障地点名称</view>
+      <view class="weui-form-preview__value">{{warnDetail.placeName}}</view>
+    </view>
+    <view class="weui-form-preview__item">
+      <view class="weui-form-preview__label">故障地点项目名称</view>
+      <view class="weui-form-preview__value">{{warnDetail.contentName}}</view>
+    </view>
+    <view class="weui-form-preview__item">
+      <view class="weui-form-preview__label">故障文本描述</view>
+      <view class="weui-form-preview__value">{{warnDetail.textDescription}}</view>
+    </view>
+    <view class="weui-form-preview__item">
+      <view class="weui-form-preview__label">语音</view>
+      <view class="weui-form-preview__value" data-src="{{warnDetail.voiceDescription}}" bindtap="bindPlayMedia">试听</view>
+    </view>
+    <view class="weui-form-preview__item">
+      <view class="weui-form-preview__label">照片</view>
+      <view class="weui-form-preview__value">
+        <image wx:for="{{warnDetail.photo}}" src="{{item}}" style="width:200rpx;margin-right: 20rpx" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="weui-form-preview__item">
+      <view class="weui-form-preview__label">故障上报人姓名</view>
+      <view class="weui-form-preview__value">{{warnDetail.name}}</view>
+    </view>
+    <view class="weui-form-preview__item">
+      <view class="weui-form-preview__label">故障上报时间</view>
+      <view class="weui-form-preview__value">{{warnDetail.updateTime}}</view>
+    </view>
+    <view class="weui-form-preview__item">
+      <view class="weui-form-preview__label">当前巡检状态</view>
+      <view class="weui-form-preview__value">{{warnDetail.statusText}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view wx:for="{{warnDetail.cheskMsg}}" class="weui-panel mt20">
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title">{{item.checkName}}</view>
+      <view class="weui-media-box__info" wx:if="{{item.note != null && item.note.length > 0}}">
+        <view class="weui-media-box__info__meta">应答意见 {{item.note == null}}</view>
+      </view>
+      <view class="weui-media-box__info">
+        <view class="weui-media-box__info__meta" wx:if="{{item.checkUpdateTime != 0}}">更新时间 {{item.checkUpdateTime}}</view>
+        <view class="weui-media-box__info__meta">状态 {{item.statusText}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="weui-form-preview__ft mt20" wx:if="{{roleID == 1 && (warnDetail.status ==2 || warnDetail.status == 6)}}">
+  <view class="weui-form-preview__btn weui-form-preview__btn_default" bindtap="bindDealWarn">处理</view>
+</view>
+
+<view class="weui-form-preview__ft mt20" wx:if="{{roleID == 2}}">
+  <view class="weui-form-preview__btn weui-form-preview__btn_default" bindtap="bindOfferWarn">提议</view>
+  <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="bindSubmitWarn">上报</button>
+</view>
+
+<view class="weui-form-preview__ft mt20" wx:if="{{roleID == 3}}">
+  <view class="weui-form-preview__btn weui-form-preview__btn_default" bindtap="bindAgreeWarn">同意</view>
+  <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="bindSubmitPatrol">提议</button>
+</view>-->
+

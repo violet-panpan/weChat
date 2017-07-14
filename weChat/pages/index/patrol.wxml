@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<view class="weui-cells weui-cells-border mt20" bindtap="bindOpenProp">
+  <view class="weui-cell weui-cell_select">
+    <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+      <image src="{{typeUrl}}" style="width: 120rpx;height: 120rpx;border:6rpx solid #eeeeee;border-radius: 50%;display: block" background-size="cover"></image>
+    </view>
+    <view class="weui-cell__bd">
+      <view style="font-size: 36rpx;padding-bottom: 10rpx;padding-top: 6rpx">项目 {{place.substance.substanceName}}{{placeNameList.length}}</view>
+      <view style="font-size: 24rpx;color: #888888;line-height: 32rpx">编号 {{place.substance.substanceID}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="weui-cells weui-cells-border mt20">
+  <view class="weui-cell weui-cell-null weui-cell_select" bindtap="bindChangePlace">
+    <view class="weui-cell__bd">
+      <view>位置</view>
+    </view>
+    <view class="weui-cell__ft">{{place.placeName}}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <view>距离</view>
+    </view>
+    <div class="weui-cell__ft">{{place.distance}}米</div>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <view>坐标</view>
+    </view>
+    <view class="weui-cell__ft">{{place.longitude}},{{place.latitude}}</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <view>区块</view>
+    </view>
+    <view class="weui-cell__ft">义乌市区块</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <view>上次检查</view>
+    </view>
+    <view class="weui-cell__ft">2015-01-01 12:30:32</view>
+  </view>
+</view>
+<view style="padding-top: 20rpx">
+  <view class="zq_button_box">
+    <view bindtap="bindChooseLocation" class="weui-btn weui-btn_black zq_button_21">矫正我的位置</view>
+    <view bindtap="bindRefreshLocation" class="weui-btn weui-btn_warn zq_button_22">刷新</view>
+  </view>
+
+  <view class="zq_button_box">
+    <view bindtap="bindSubmit" class="weui-btn weui-btn_primary zq_button_1">上报水源</view>
+  </view>
+</view>

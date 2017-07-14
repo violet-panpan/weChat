@@ -1,0 +1,82 @@
+.form_box {
+  width: 629rpx;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content:center;
+  flex-direction:column;
+  font-size: 30rpx;
+  margin-top: 100rpx;
+}
+
+.form_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 76rpx;
+  margin: 22rpx 0;
+}
+
+.form_item:after{
+  content: " ";
+  position: absolute;
+  left: 90rpx;
+  bottom: 0;
+  right: 20rpx;
+  height: 1px;
+  border-bottom: 1px solid #F25E4C;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.form_item image {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.item_thumb {
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 20rpx;
+}
+
+.input_box {
+  flex-grow: 1000;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.mobilecode {
+  color:#ff7855;
+  word-break:keep-all;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.button_band {
+  width: 629rpx;
+  height: 82rpx;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 84rpx;
+  border-radius: 1rpx;
+  border:1rpx solid #ffffff;
+  text-align: center;
+  color:#F25E4C;
+}
+
+.button_login {
+  width: 629rpx;
+  height: 82rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80rpx;
+  line-height: 84rpx;
+  border-radius: 1rpx;
+  background-color: #F25E4C;
+  text-align: center;
+  color:#ffffff;
+}
